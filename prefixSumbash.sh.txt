@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --job-name="prefixSum"
+#SBATCH --output="prefixSum.%j.%N.out"
+#SBATCH --partition=compute
+#SBATCH --nodes=8
+#SBATCH --ntasks-per-node=1
+#SBATCH --export=ALL
+#SBATCH -t 00:10:00
+
+ibrun -np 8 ./prefixSum 48
